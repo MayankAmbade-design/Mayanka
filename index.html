@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love! ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Cursive', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            max-width: 90%;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 50px;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .btn {
+            background: #ff4d79;
+            color: white;
+            font-size: 22px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background: #ff3366;
+            transform: scale(1.1);
+        }
+        .hidden-message {
+            display: none;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .hearts {
+            position: absolute;
+            font-size: 24px;
+            color: red;
+            animation: float 6s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); opacity: 1; }
+            100% { transform: translateY(-800px); opacity: 0; }
+        }
+        .fireworks {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px white;
+            animation: explode 1.5s infinite;
+        }
+        @keyframes explode {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday, My Love! 🎉</h1>
+        <button class="btn" onclick="showMessage()">💝 Click for a Surprise 💝</button>
+        <div class="hidden-message" id="message">
+            <h2>For My Dearest Ayeshu 💖</h2>
+            <p>
+                My Love, My Ayeshu,
+
+Of course, you knew this was coming—a whole heartfelt letter just for you! Happy Birthday, meri pyari bacchi! My support system, my person. Where do I even begin? Let’s go back to the very start.
+
+Before you, I had convinced myself that love wasn’t meant for me anymore. I had built walls around my heart, promising myself that I wouldn’t let anyone in. But then... I saw you. That smile, that innocence (which, let’s be honest, is still there, even if you deny it), that respect in your eyes—it shook something inside me. But you know what made you different? You never tried to prove your happiness, yet I could see it, feel it. You were genuinely happy around me, and that was everything. You were the first person whose happiness I could see because of me. And at that moment, I knew—there was no one else I’d ever want.
+
+Your smile? Stuck in my head rent-free. The way you laugh? A melody I never want to stop listening to. From the very beginning, I just wanted to protect that happiness, make sure nothing ever dims your light. That’s why, every moment I spent teaching you BB, being around you, I told myself—maybe this is all we’ll ever have, just these few days, so let’s cherish them. But destiny had other plans, and here we are. Not just a fleeting moment, but something real, something forever.
+
+And today? Your birthday. My love, if I could, I’d be right there with you, arms full of flowers, chocolates, and gifts, just to see that twinkle in your eyes. I’d hold your hands, look into your eyes, and whisper "Happy Birthday, my love" over and over, just to watch you smile. But more than any gift, I want to give you time, love, and a forever with me. Because you’re the only one that matters, Ayeshu.
+
+It took me so long to find real love, and now that I’ve found it in you, I’ll wait as long as it takes for everything to fall into place. The way you love me, the little things you do—the voice notes, the songs you sing—they make my love for you infinite. You’ve changed me in ways I never thought possible. You turned my chaos into calm, my restlessness into peace. And for that, I will always be grateful.
+
+Even when we’re apart, I feel you with me. You’re not just someone I love—you’re the only person I can love this deeply. With everyone else, I was there but not truly present. But with you? Even when you're not around, I still feel connected to you. You’ve made a home in my heart, and there’s no place I’d rather be.
+
+I wish I could be with you right now, wrapping you in the longest, warmest hug, holding your hands, giving you all my love today and forever. But until then, just know—I love you, more than words can say.
+
+Wear that little something I gave you today, and I’ll imagine you smiling, feeling me right there with you. And remember, your smile is my home. As long as you keep smiling, I’ll always be right beside you.
+
+Happy Birthday, my love. Forever yours
+            </p>
+            <p>💋 I love you endlessly! 💋</p>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("bg-music").play();
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("hearts");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 500);
+
+        function createFirework() {
+            const firework = document.createElement("div");
+            firework.classList.add("fireworks");
+            firework.style.left = Math.random() * 100 + "vw";
+            firework.style.top = Math.random() * 100 + "vh";
+            document.body.appendChild(firework);
+            setTimeout(() => firework.remove(), 1500);
+        }
+        setInterval(createFirework, 600);
+    </script>
+</body>
+</html>
